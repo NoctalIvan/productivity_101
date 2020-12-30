@@ -1,0 +1,25 @@
+{
+  "name": "Noctalivan - productivity",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Stop wasting energy on stupid shit",
+  "homepage_url": "http://extensionizr.com",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "contentSettings",
+    "https://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": [
+        "src/inject/inject.js"
+      ]
+    }
+  ]
+}
