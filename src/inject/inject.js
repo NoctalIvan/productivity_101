@@ -10,14 +10,20 @@ chrome.extension.sendMessage({}, function(response) {
 				// memes
 				case '9gag.com':
 
+				// games
+				case "www.jeuxvideo.com":
+
 				// comics (that i like a bit too much)
 				case "www.commitstrip.com":
 				case "dilbert.com":
 				case "xkcd.com":
 				case "www.smbc-comics.com":
-					const res = window.confirm('Are you sure that\'s what you wanna do right now?')
-					if(!res) {
-						window.location.href = "https://sayingimages.com/wp-content/uploads/really-proud-of-you-meme.gif"
+					const a = Math.floor(1 + Math.random() * 10)
+					const b = Math.floor(1 + Math.random() * 10)
+					const res = window.prompt(`${a} * ${b}?`)
+					
+					if(res != a * b) {
+						window.location.href = "https://www.meme-arsenal.com/memes/308414a4ed2d3aceb7b323dccba5193e.jpg"
 					}
 
 					return
