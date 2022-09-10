@@ -1,5 +1,15 @@
 chrome.extension.sendMessage({}, function(response) {
 	var readyStateCheckInterval = setInterval(function() {
+
+		// date limitations
+		const d = new Date()
+		if(
+			d.getDay() == 6 || d.getDay() == 0 // satuday, sunday
+			|| d.getHours() > 18 // after 6pm
+		) {
+			return
+		}
+
 		if (document.readyState === "complete") {
 			clearInterval(readyStateCheckInterval);
 
@@ -20,7 +30,7 @@ chrome.extension.sendMessage({}, function(response) {
 				case "www.smbc-comics.com":
 					const a = Math.floor(1 + Math.random() * 10)
 					const b = Math.floor(1 + Math.random() * 10)
-					const res = window.prompt(`${a} * ${b}?`)
+					const res = -1 // window.prompt(`${a} * ${b}?`)
 					
 					if(res != a * b) {
 						window.location.href = "https://www.meme-arsenal.com/memes/308414a4ed2d3aceb7b323dccba5193e.jpg"
