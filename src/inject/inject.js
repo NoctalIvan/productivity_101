@@ -5,7 +5,7 @@ chrome.extension.sendMessage({}, function(response) {
 		const d = new Date()
 		if(
 			d.getDay() == 6 || d.getDay() == 0 // satuday, sunday
-			|| d.getHours() > 18 // after 6pm
+			|| d.getHours() >= 18 // after 6pm
 		) {
 			return
 		}
