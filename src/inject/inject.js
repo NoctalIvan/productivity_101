@@ -30,7 +30,7 @@ chrome.extension.sendMessage({}, function(response) {
 				return
 			}
 
-			if(greyList.includes(window.location.hostname) && !isWorkHours) {
+			if(greyList.includes(window.location.hostname) && isWorkHours) {
 				window.location.href = "https://www.meme-arsenal.com/memes/308414a4ed2d3aceb7b323dccba5193e.jpg"
 			}
 
